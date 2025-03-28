@@ -7,16 +7,16 @@ const Navbar = () => {
     const [nav, setNav] = useState(false);
 
     return (
-        <motion.nav 
-            initial={{ y: -50, opacity: 0 }} 
-            animate={{ y: 0, opacity: 1 }} 
-            transition={{ duration: 0.5 }} 
-            className="fixed top-0 left-0 w-full bg-black text-white p-4 z-50"
+        <motion.nav
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className=" left-0 w-full bg-black text-white p-4 z-50"  // Changed top-0 to top-6 for margin
         >
             <div className="max-w-7xl mx-auto flex justify-between items-center">
-                <h1 className="text-2xl font-bold font-style: italic">Sanduni</h1>
+                <h1 className="text-4xl font-bold font-style: italic">Sanduni</h1>
 
-                <ul className="hidden md:flex space-x-6 font-semibold">
+                <ul className="hidden md:flex space-x-6 font-semibold text-xl">
                     <li><Link to="about" smooth={true} duration={500}>About</Link></li>
                     <li><Link to="skills" smooth={true} duration={500}>Skills</Link></li>
                     <li><Link to="projects" smooth={true} duration={500}>Projects</Link></li>
@@ -28,11 +28,11 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Menu Animation */}
-                <motion.ul 
-                    initial={{ x: "-100%" }} 
-                    animate={{ x: nav ? 0 : "-100%" }} 
-                    transition={{ duration: 0.3 }} 
-                    className="fixed top-16 left-0 w-full bg-gray-900 p-6 text-center space-y-4 font-semibold"
+                <motion.ul
+                    initial={{ x: "-100%" }}
+                    animate={{ x: nav ? 0 : "-100%" }}
+                    transition={{ duration: 0.3 }}
+                    className="fixed top-16 left-0 w-full bg-gray-900 p-6 text-center space-y-4 font-semibold text-xl"
                 >
                     <li><Link to="about" smooth={true} duration={500} onClick={() => setNav(false)}>About</Link></li>
                     <li><Link to="skills" smooth={true} duration={500} onClick={() => setNav(false)}>Skills</Link></li>
