@@ -50,7 +50,7 @@ const projects = [
 // ProjectsMain Component
 const ProjectsMain = () => {
     return (
-        <div id="projects" className="max-w-[1200px] mx-auto px-4 py-16 bg-black text-white">
+        <div id="projects" className="bg-[#0e0e0e] text-white py-20 px-6">
             <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
                 <ProjectsText />
             </motion.div>

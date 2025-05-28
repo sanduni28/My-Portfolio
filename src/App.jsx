@@ -7,6 +7,7 @@ import Project from "./components/Project";
 import Certifications from "./components/Certifications";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
+import Interests from "./components/Interests";
 
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
       <Skills/>
       <Project/>
       <Certifications/>
+      <Interests/>
       <ContactForm/>
       <Footer/>
       

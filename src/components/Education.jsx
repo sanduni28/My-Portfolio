@@ -46,7 +46,7 @@ const Education = () => {
     return (
         <motion.div
             id="education"
-            className="mt-10 px-4 scroll-smooth"
+            className="mt-10 px-4 scroll-smooth bg-[#0e0e0e] text-white py-20 px-6"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
