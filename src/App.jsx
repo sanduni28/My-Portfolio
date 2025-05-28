@@ -5,6 +5,8 @@ import Education from "./components/Education";
 import Skills from "./components/Skills";
 import Project from "./components/Project";
 import Certifications from "./components/Certifications";
+import ContactForm from "./components/ContactForm";
+import Footer from "./components/Footer";
 
 
 export default function App() {
@@ -17,6 +19,9 @@ export default function App() {
       <Skills/>
       <Project/>
       <Certifications/>
+      <ContactForm/>
+      <Footer/>
+      
 
     </>
   )

@@ -1,33 +1,17 @@
 import React from "react";
 import {
-    DiHtml5,
-    DiCss3,
-    DiJavascript1,
-    DiReact,
-    DiMysql,
-    DiJava,
-    DiPython,
-    DiPhp,
-    DiGithubBadge,
+    DiHtml5, DiCss3, DiJavascript1, DiReact, DiMysql,
+    DiJava, DiPython, DiPhp, DiGithubBadge,
 } from "react-icons/di";
 import {
-    FaFigma,
-    FaLaravel,
-    FaCuttlefish,
-    FaCode,
-    FaAndroid,
+    FaFigma, FaLaravel, FaCuttlefish, FaAndroid,
 } from "react-icons/fa";
 import {
-    SiTailwindcss,
-    SiFramer,
-    SiR,
-    SiSqlite,
-    SiPycharm,
-    SiEclipseide,
-    SiApachenetbeanside,
+    SiTailwindcss, SiFramer, SiR, SiSqlite,
+    SiPycharm, SiEclipseide, SiApachenetbeanside,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 
 const skills = [
@@ -66,12 +50,6 @@ const skills = [
         ],
     },
     {
-        category: "UI/UX Design",
-        technologies: [
-            { name: "Figma", icon: <FaFigma className="text-purple-500" /> },
-        ],
-    },
-    {
         category: "Development Tools",
         technologies: [
             { name: "VS Code", icon: <VscVscode className="text-blue-500" /> },
@@ -82,35 +60,59 @@ const skills = [
             { name: "Eclipse", icon: <SiEclipseide className="text-indigo-600" /> },
         ],
     },
+    {
+        category: "UI/UX Design",
+        technologies: [
+            { name: "Figma", icon: <FaFigma className="text-purple-500" /> },
+        ],
+    },
 ];
 
 const Skills = () => {
     return (
-        <div className="max-w-[900px] mx-auto flex flex-col justify-center px-6 text-gray-200 pb-12 md:py-24" id="skills">
+        <div
+            id="skills"
+            className="max-w-7xl mx-auto flex flex-col justify-center px-6 text-gray-200 py-24 scroll-smooth"
+        >
             <Reveal>
+                {/* Title */}
                 <motion.h2
-                    className="text-4xl font-bold mb-6 text-center text-white"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1 }}
+                    className="text-4xl font-bold text-white mb-4 text-center"
+                    initial={{ opacity: 0, y: -30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
                 >
                     Skills
                 </motion.h2>
-                <p className="text-center mb-10 text-white text-xl">
+
+                {/* Decorative Line */}
+                <motion.div
+                    className="w-20 h-1 bg-[#40E0D0] mx-auto mb-10 rounded-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: 80 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                />
+
+                {/* Intro Text */}
+                <p className="text-center mb-12 text-white text-xl">
                     Here are some of the technologies and tools I have experience with:
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {skills.map((skill, index) => (
                         <motion.div
                             key={index}
-                            className="border border-[#40E0D0] p-6 rounded-xl bg-gray-900/40 shadow-lg"
+                            className="border border-[#40E0D0] p-6 rounded-2xl bg-gray-900/40 shadow-md hover:shadow-cyan-500/30 transition-shadow"
                             initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
                             transition={{ delay: 0.2 * index, duration: 0.6 }}
                         >
-                            <h3 className="text-2xl font-semibold mb-4 text-center">{skill.category}</h3>
-                            <div className="grid grid-cols-2 gap-4">
+                            <h3 className="text-2xl font-semibold mb-4 text-center text-white">
+                                {skill.category}
+                            </h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {skill.technologies.map((tech, idx) => (
                                     <motion.div
                                         key={idx}
@@ -119,7 +121,7 @@ const Skills = () => {
                                         transition={{ type: "spring", stiffness: 300 }}
                                     >
                                         <span className="text-3xl">{tech.icon}</span>
-                                        <span className="text-lg">{tech.name}</span>
+                                        <span className="text-lg text-gray-300">{tech.name}</span>
                                     </motion.div>
                                 ))}
                             </div>

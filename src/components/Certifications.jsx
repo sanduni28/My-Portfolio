@@ -78,7 +78,25 @@ const Certifications = () => {
                 transition={{ duration: 1 }}
                 className="text-center mb-12"
             >
-                <h2 className="text-4xl font-bold text-white">Certifications</h2>
+                {/* Title */}
+                <motion.h2
+                    className="text-4xl font-bold text-white mb-4 text-center"
+                    initial={{ opacity: 0, y: -30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
+                >
+                    Certifications
+                </motion.h2>
+
+
+                {/* Decorative Line */}
+                <motion.div
+                    className="w-20 h-1 bg-[#40E0D0] mx-auto mb-10 rounded-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: 80 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                />
+
                 <p className="text-xl text-white mt-4">
                     Here are some of the certifications I have earned, showcasing my skills and knowledge.
                 </p>
@@ -139,8 +157,8 @@ const Certifications = () => {
                                     key={index}
                                     onClick={() => setCurrentIndex(index * 2)}
                                     className={`w-3 h-3 mx-2 cursor-pointer rounded-full ${Math.floor(currentIndex / 2) === index
-                                            ? "bg-[#40E0D0]"
-                                            : "bg-gray-500"
+                                        ? "bg-[#40E0D0]"
+                                        : "bg-gray-500"
                                         }`}
                                     whileHover={{ scale: 1.3 }}
                                 />

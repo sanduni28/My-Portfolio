@@ -124,11 +124,12 @@ const Hero = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
-                    className="flex justify-center -mt-24"
+                    className="flex justify-center items-center mt-16"
                 >
                     <motion.img
                         src={profilepic}
-                        className="w-850 max-w-[850px] h-900 max-h-[900px] rounded-full shadow-lg"
+                        className="w-[450px] h-[450px] rounded-full border-4 border-[#000202] object-cover shadow-lg"
+                        alt="Sanduni Bandara"
                     />
                 </motion.div>
 

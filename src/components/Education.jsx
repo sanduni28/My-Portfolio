@@ -23,35 +23,69 @@ const educationData = [
     },
 ];
 
+const containerVariants = {
+    hidden: {},
+    show: {
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    show: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: { duration: 0.5, ease: "easeOut" },
+    },
+};
+
 const Education = () => {
     return (
         <motion.div
-            className="mt-2 px-6"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            id="education"
+            className="mt-10 px-4 scroll-smooth"
+            initial="hidden"
+            whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 1 }}
+            variants={containerVariants}
         >
-            <h2 className="text-center text-4xl font-bold text-white mb-12">
+            <motion.h2
+                className="text-4xl font-bold text-white mb-4 text-center"
+                initial={{ opacity: 0, y: -30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+            >
                 Education
-            </h2>
+            </motion.h2>
 
-            <div className="max-w-2xl mx-auto">
+            {/* Decorative Line */}
+            <motion.div
+                className="w-20 h-1 bg-[#40E0D0] mx-auto mb-10 rounded-full"
+                initial={{ width: 0 }}
+                whileInView={{ width: 80 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+            />
+
+            <br />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 {educationData.map((edu, index) => (
                     <motion.div
                         key={index}
-                        className="flex flex-col sm:flex-row justify-between items-center bg-gray-800/50 backdrop-blur-md p-4 rounded-xl border border-[#40E0D0] shadow-lg hover:shadow-[#40E0D0]/50 transition-all duration-300 mb-6"
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: index * 0.2 }}
-                        whileHover={{ scale: 1.05 }}
+                        variants={itemVariants}
+                        whileHover={{ scale: 1.03 }}
+                        className="relative bg-gray-800/50 p-5 rounded-xl border border-[#40E0D0] shadow-md hover:shadow-[#40E0D0]/80 transition-all duration-300"
                     >
-                        <div className="flex-1">
-                            <h3 className="text-2xl font-semibold text-[#40E0D0]">{edu.title}</h3>
-                            {edu.institution && <p className="text-gray-300 mt-1 text-xl">{edu.institution}</p>}
-                            <p className="text-gray-400 text-xl">{edu.year}</p>
-                        </div>
+
+
+                        <h3 className="text-xl font-semibold text-[#40E0D0]">{edu.title}</h3>
+                        {edu.institution && (
+                            <p className="text-gray-300 text-lg mt-1">{edu.institution}</p>
+                        )}
+                        <p className="text-gray-400 text-lg mt-1">{edu.year}</p>
                     </motion.div>
                 ))}
             </div>

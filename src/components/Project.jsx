@@ -67,7 +67,23 @@ const ProjectsMain = () => {
 const ProjectsText = () => {
     return (
         <div className="flex flex-col items-center mt-[6px]">
-            <h2 className="text-center text-4xl font-bold text-white mb-12">My Projects</h2>
+            <motion.h2
+                className="text-4xl font-bold text-white mb-4 text-center"
+                initial={{ opacity: 0, y: -30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+            >
+                My Projects
+            </motion.h2>
+
+            {/* Decorative Line */}
+            <motion.div
+                className="w-20 h-1 bg-[#40E0D0] mx-auto mb-10 rounded-full"
+                initial={{ width: 0 }}
+                whileInView={{ width: 80 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+            />
+
             <p className="text-xl text-center">
                 These are a few of the web and mobile development projects I have worked on, ranging from mobile applications to full-stack websites with unique features and functionalities.
             </p>
