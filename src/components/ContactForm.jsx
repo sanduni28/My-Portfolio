@@ -124,7 +124,7 @@ const ContactForm = () => {
           <motion.img
             src="../public/contact.png"
             alt="Contact"
-            className="rounded-xl shadow-xl w-80 h-72 object-cover border border-white/20"
+            className="w-64 h-64"
             whileHover={{ scale: 1.05 }}
           />
 

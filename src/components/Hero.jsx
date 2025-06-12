@@ -6,8 +6,8 @@ import { Github, Linkedin, Instagram, Facebook } from "lucide-react";
 
 const Hero = () => {
     return (
-        <div className="bg-[#0e0e0e] text-white py-20 px-44 ">
-            <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-8">
+        <div className="bg-[#0e0e0e] text-white py-12 px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-2">
 
                 {/* Left Side Content */}
                 <motion.div
@@ -60,7 +60,6 @@ const Hero = () => {
                     >
                         Passionate about creating seamless digital experiences, I’m a software engineering undergraduate learning and building every day.
                     </motion.p>
-                    <br />
                     <br />
                     <br />
                     {/* Social Links and Download CV Button */}
@@ -128,7 +127,7 @@ const Hero = () => {
                 >
                     <motion.img
                         src={profilepic}
-                        className="w-[600px] h-[600px] "
+                        className="w-[550px] h-[550px] "
                         alt="Sanduni Bandara"
                     />
                 </motion.div>
