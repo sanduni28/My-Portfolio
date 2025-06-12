@@ -6,8 +6,8 @@ import { Github, Linkedin, Instagram, Facebook } from "lucide-react";
 
 const Hero = () => {
     return (
-        <div className="bg-[#0e0e0e] text-white py-12 px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-2">
+        <div className="bg-[#0e0e0e] text-white py-16 px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 place-items-center">
 
                 {/* Left Side Content */}
                 <motion.div
@@ -127,7 +127,7 @@ const Hero = () => {
                 >
                     <motion.img
                         src={profilepic}
-                        className="w-[550px] h-[550px] "
+                        className="w-[500px] h-[500px] "
                         alt="Sanduni Bandara"
                     />
                 </motion.div>
